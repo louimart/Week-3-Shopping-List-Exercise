@@ -57,11 +57,11 @@ function App() {
       <Header />
       <h1>Add an Item</h1>
       <AddGroceryForm groceryRefreshCallback={refreshGrocery} />
-      <p>
+      <div>
       <h1>Shopping List</h1>
       <button className="btn">Reset</button>
       <button className="btn">Clear</button>
-      </p>
+      </div>
       {/* HOW do we render a list??? */}
       {/* .map loops through the list of items in the groceryData array being passed through
       rendering a CARD for each item. */}
