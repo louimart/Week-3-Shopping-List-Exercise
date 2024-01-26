@@ -8,3 +8,7 @@ export const fetchGrocery = () => {
 export const postGrocery = (groceryData) => {
   return axios.post('/api/groceries', groceryData);
 };
+
+export const deleteGrocery = (groceryId) => {
+  return axios.delete(`/api/groceries/${groceryId}`);
+};
