@@ -53,7 +53,10 @@ function App() {
       {groceryList.map((groceryData, dataIndex) => {
         return (
           <div className="item-list" key={dataIndex}>
-            <Card grocery={groceryData} />
+            <Card
+              grocery={groceryData}
+              // groceryRefreshCallback={refreshGrocery}
+            />
           </div>
         );
       })}

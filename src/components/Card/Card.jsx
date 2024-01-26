@@ -3,14 +3,32 @@
 // const useState = React.useState;
 
 // Object deconstruction
-import { useState } from "react";
-import Button from "@mui/material/Button";
+// import { useState } from 'react';
+import Button from '@mui/material/Button';
+// import { deleteGrocery } from '../../groceryApi/grocery.api';
+// import { refreshGrocery } from '../App/App';
 
 function Card(props) {
+  // function Card({ groceryList, refreshGroceryCallback }) {
   // useState function brings back an array
   // default value passed through useState
   // const [itemName, setItemName] = useState('');
-  console.log("CARD PROPS", props.grocery.Name);
+  // console.log('CARD PROPS', props.grocery.Name);
+
+  console.log('CARD PROPS', props.Name);
+
+  // const handleClickDelete = (id) => {
+  //   // ID item
+  //   console.log('DELETE - groceryId:', id);
+  //   // MAKE Axios Call
+  //   deleteGrocery(id)
+  //     .then((response) => {
+  //       refreshGroceryCallback();
+  //     })
+  //     .catch((err) => {
+  //       console.error('ERROR:', err);
+  //     });
+  // };
 
   return (
     <div className="card">
@@ -26,14 +44,18 @@ function Card(props) {
       >
         Buy
       </button>
-      <button
-        variant="contained"
-        color="secondary"
-        size="small"
-        className="btn"
+      <Button
+      // variant="contained"
+      // color="primary"
+      // size="small"
+      // className="btn"
+      // onClick={(event) => {
+      //   event.preventDefault();
+      //   handleClickDelete(props.grocery.id);
+      // }}
       >
         Remove
-      </button>
+      </Button>
     </div>
   );
 }
