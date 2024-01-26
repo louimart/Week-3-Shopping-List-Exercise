@@ -4,19 +4,6 @@ import Header from '../Header/Header.jsx';
 import './App.css';
 import Card from '../Card/Card.jsx';
 
-// function App() {
-//     return (
-//         <div className="App">
-//             <Header />
-//             <main>
-//                 <p>Under Construction...</p>
-//             </main>
-//         </div>
-//     );
-// }
-
-// export default App;
-
 import { useState, useEffect } from 'react';
 
 import { fetchGrocery } from '../../groceryApi/grocery.api';
