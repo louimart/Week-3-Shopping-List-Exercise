@@ -1,22 +1,7 @@
 import React from 'react';
-
-import Header from '../Header/Header.jsx'
+import Header from '../Header/Header.jsx';
 import './App.css';
 import Card from '../Card/Card.jsx';
-
-
-// function App() {
-//     return (
-//         <div className="App">
-//             <Header />
-//             <main>
-//                 <p>Under Construction...</p>
-//             </main>
-//         </div>
-//     );
-// }
-
-// export default App;
 
 import { useState, useEffect } from 'react';
 
@@ -58,9 +43,9 @@ function App() {
       <h1>Add an Item</h1>
       <AddGroceryForm groceryRefreshCallback={refreshGrocery} />
       <p>
-      <h1>Shopping List</h1>
-      <button className="btn">Reset</button>
-      <button className="btn">Clear</button>
+        <h1>Shopping List</h1>
+        <button className="btn">Reset</button>
+        <button className="btn">Clear</button>
       </p>
       {/* HOW do we render a list??? */}
       {/* .map loops through the list of items in the groceryData array being passed through
@@ -68,7 +53,7 @@ function App() {
       {groceryList.map((groceryData, dataIndex) => {
         return (
           <div className="item-list" key={dataIndex}>
-            <Card grocery={groceryData}/>
+            <Card grocery={groceryData} />
           </div>
         );
       })}
