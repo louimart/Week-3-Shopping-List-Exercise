@@ -19,7 +19,7 @@ function Card(props) {
   // const [itemName, setItemName] = useState('');
   // console.log('CARD PROPS', props.grocery.Name);
 
-  console.log('CARD PROPS', props.Name);
+  console.log('CARD PROPS', props.grocery.Name);
 
   // const handleClickDelete = (id) => {
   //   // ID item
@@ -52,10 +52,10 @@ function Card(props) {
         color="primary"
         size="small"
         className="btn"
-        onClick={(event) => {
-          event.preventDefault();
-          handleClickDelete(props.grocery.id);
-        }}
+        // onClick={(event) => {
+        //   event.preventDefault();
+        //   handleClickDelete(props.grocery.id);
+        // }}
       >
         Remove
       </Button>
