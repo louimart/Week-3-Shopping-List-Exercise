@@ -3,22 +3,39 @@
 // const useState = React.useState;
 
 // Object deconstruction
-import {useState} from 'react';
+import { useState } from "react";
+import Button from "@mui/material/Button";
 
 function Card(props) {
-    // useState function brings back an array
-    // default value passed through useState
-    // const [itemName, setItemName] = useState('');
-    console.log('CARD PROPS', props.grocery.Name);
+  // useState function brings back an array
+  // default value passed through useState
+  // const [itemName, setItemName] = useState('');
+  console.log("CARD PROPS", props.grocery.Name);
 
-    return(
+  return (
     <div className="card">
-        <h3>{props.grocery.Name}</h3>
-        <p>{Number(props.grocery.Quantity)} {props.grocery.Unit}</p>
-        <button className="btn">Buy</button>
-        <button className="btn">Remove</button>
+      <h3>{props.grocery.Name}</h3>
+      <p>
+        {Number(props.grocery.Quantity)} {props.grocery.Unit}
+      </p>
+      <button
+        variant="contained"
+        color="secondary"
+        size="small"
+        className="btn"
+      >
+        Buy
+      </button>
+      <button
+        variant="contained"
+        color="secondary"
+        size="small"
+        className="btn"
+      >
+        Remove
+      </button>
     </div>
-    );
-};
+  );
+}
 
 export default Card;
