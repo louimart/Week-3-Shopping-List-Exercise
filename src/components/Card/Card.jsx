@@ -5,6 +5,9 @@
 // Object deconstruction
 import { useState } from "react";
 import Button from "@mui/material/Button";
+import * as React from "react";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 function Card(props) {
   // useState function brings back an array
@@ -14,26 +17,18 @@ function Card(props) {
 
   return (
     <div className="card">
-      <h3>{props.grocery.Name}</h3>
+      <Typography component="div" variant="body1">
+        <Box sx={{ color: "info.main" }}><h3>{props.grocery.Name}</h3></Box>
+      </Typography>
       <p>
         {Number(props.grocery.Quantity)} {props.grocery.Unit}
       </p>
-      <button
-        variant="contained"
-        color="secondary"
-        size="small"
-        className="btn"
-      >
+      <Button variant="outlined" color="primary" size="small" className="btn">
         Buy
-      </button>
-      <button
-        variant="contained"
-        color="secondary"
-        size="small"
-        className="btn"
-      >
+      </Button>
+      <Button variant="outlined" color="error" size="small" className="btn">
         Remove
-      </button>
+      </Button>
     </div>
   );
 }
