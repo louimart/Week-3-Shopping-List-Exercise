@@ -59,7 +59,7 @@ function App() {
       <div>
         <h1>Shopping List</h1>
         <button className="btn">Reset</button>
-        <button className="btn" onClick={() => {handleClickClearAll()}}>Clear</button>
+        <button className="btn" onClick={() => {alert('ALL Grocery Items Deleted'), handleClickClearAll()}}>Clear</button>
         {/* <button className="btn" onClick={() => { alert('ALL GROCERY ITEMS DELETED')}}>Clear</button> */}
       </div>
       {/* HOW do we render a list??? */}
