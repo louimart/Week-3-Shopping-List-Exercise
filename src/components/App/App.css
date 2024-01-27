@@ -26,9 +26,24 @@ input {
 }
 
 .card {
-  /* background-color: whitesmoke; */
+  background-color: white;
   outline: 1px solid black;
   border-radius: 1em;
   padding: 1em;
   margin: 0.5em;
+  /* filter: drop-shadow(2px 2px 2px lightgray) */
+
+}
+
+.card-purchased {
+  background-color: white;
+  outline: 1px solid green;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 0.5em;
+  /* filter: drop-shadow(2px 2px 2px lightgray) */
+}
+
+.shopping-list {
+  padding: 2rem;
 }
