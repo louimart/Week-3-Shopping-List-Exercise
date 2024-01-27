@@ -6,7 +6,11 @@ import Card from '../Card/Card.jsx';
 
 import { useState, useEffect } from 'react';
 
-import { fetchGrocery, globalDeleteGrocery } from '../../groceryApi/grocery.api';
+import {
+  fetchGrocery,
+  globalDeleteGrocery,
+  resetGlobalBuyStatus,
+} from '../../groceryApi/grocery.api';
 import AddGroceryForm from '../AddGroceryForm/AddGroceryForm';
 
 function App() {
@@ -38,11 +42,24 @@ function App() {
     refreshGrocery();
   }, []);
 
-   // DELETE Function
+  // DELETE Function
   const handleClickClearAll = () => {
     console.log('DELETE ALL', groceryList);
     // MAKE Axios Call
     globalDeleteGrocery(groceryList)
+      .then((response) => {
+        refreshGrocery();
+      })
+      .catch((err) => {
+        console.error('ERROR:', err);
+      });
+  };
+
+  // PUT - Reset All Buy Status
+  const handleClickResetAll = () => {
+    console.log('RESET ALL BUY STATUS', groceryList);
+    // MAKE Axios Call
+    resetGlobalBuyStatus(groceryList)
       .then((response) => {
         refreshGrocery();
       })
@@ -58,9 +75,23 @@ function App() {
       <AddGroceryForm groceryRefreshCallback={refreshGrocery} />
       <div className="shopping-list">
         <h1>Shopping List</h1>
-        <button className="btn">Reset</button>
-        <button className="btn" onClick={() => {alert('ALL Grocery Items Deleted'), handleClickClearAll()}}>Clear</button>
-        {/* <button className="btn" onClick={() => { alert('ALL GROCERY ITEMS DELETED')}}>Clear</button> */}
+        <button
+          className="btn"
+          onClick={() => {
+            handleClickResetAll();
+          }}
+        >
+          Reset
+        </button>
+        <button
+          className="btn"
+          onClick={() => {
+            alert('ALL Grocery Items Deleted'),
+            handleClickClearAll();
+          }}
+        >
+          Clear
+        </button>
       </div>
       {/* HOW do we render a list??? */}
       {/* .map loops through the list of items in the groceryData array being passed through
