@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import image from '../../../public/images/grocery.jpg';
+import image from '/src/images/grocery.jpg';
 
 function Header() {
   return (
@@ -11,9 +11,10 @@ function Header() {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        width: '100vw',
+        width: 'auto',
         height: '10vh',
         alignItems: 'center',
+        margin: '50px',
       }}
     >
       <h1 className="banner-header">My Shopping List</h1>
