@@ -56,7 +56,7 @@ function App() {
       <Header />
       <h1>Add an Item</h1>
       <AddGroceryForm groceryRefreshCallback={refreshGrocery} />
-      <div>
+      <div className="shopping-list">
         <h1>Shopping List</h1>
         <button className="btn">Reset</button>
         <button className="btn" onClick={() => {alert('ALL Grocery Items Deleted'), handleClickClearAll()}}>Clear</button>
