@@ -5,4 +5,5 @@
   display: center;
   font-size: 50px;
   color: red;
+  filter: drop-shadow(0 0 5px white);
 }
