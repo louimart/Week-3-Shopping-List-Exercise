@@ -12,3 +12,7 @@ export const postGrocery = (groceryData) => {
 export const deleteGrocery = (groceryId) => {
   return axios.delete(`/api/groceries/${groceryId}`);
 };
+
+export const globalDeleteGrocery = (groceryList) => {
+  return axios.delete('/api/global', groceryList);
+};
