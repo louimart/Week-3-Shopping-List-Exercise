@@ -55,7 +55,7 @@ shoppingRouter.put('/:id', (req, res) => {
         });
     });
 
-// DELETE
+// DELETE individual grocery item
 shoppingRouter.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id)
     const queryText = `DELETE FROM "shopping_list" WHERE "id" = $1;`;
