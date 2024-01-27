@@ -16,3 +16,7 @@ export const deleteGrocery = (groceryId) => {
 export const globalDeleteGrocery = (groceryList) => {
   return axios.delete('/api/global', groceryList);
 };
+
+export const updateBuyStatus = (groceryId) => {
+  return axios.put(`/api/groceries/${groceryId}`);
+};

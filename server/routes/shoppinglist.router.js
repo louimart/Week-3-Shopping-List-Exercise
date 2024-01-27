@@ -39,13 +39,13 @@ shoppingRouter.get('/', (req, res) => {
       });
   });
 
-// PUT
+// PUT update purchase status (BUY)
 shoppingRouter.put('/:id', (req, res) => {
     const id = parseInt(req.params.id)
-    const task = req.body;
-    const queryText = `UPDATE "shopping_list" SET "Quantity" = $1 WHERE "id" = $2;`;
+    const grocery = req.body;
+    const queryText = `UPDATE "shopping_list" SET "Buy" = NOT "Buy" WHERE "id" = $1;`;
     pool
-        .query(queryText, [task.Quantity, id])
+        .query(queryText, [id])
         .then(() => {
             res.sendStatus(200);
           })

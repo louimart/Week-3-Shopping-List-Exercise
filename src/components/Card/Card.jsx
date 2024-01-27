@@ -5,7 +5,7 @@
 // Object deconstruction
 
 // import { useState } from 'react';
-import { deleteGrocery } from '../../groceryApi/grocery.api';
+import { deleteGrocery, updateBuyStatus } from '../../groceryApi/grocery.api';
 // import { refreshGrocery } from '../App/App';
 import Button from '@mui/material/Button';
 import * as React from 'react';
@@ -21,6 +21,18 @@ function Card({ grocery, groceryRefreshCallback }) {
   // checking passed on data of 'grocery'
   // console.log('card groceryList', grocery);
   // console.log('card grocery name', grocery.Name);
+
+    // PUT function to update BUY status
+    const handleClickBuyStatus = (id) => {
+      console.log('PUT update BUY status - groceryId:', id);
+      updateBuyStatus(id)
+        .then((response) => {
+          groceryRefreshCallback();
+        })
+        .catch((err) => {
+          console.error('ERROR:', err);
+        });
+    };
 
   const handleClickDelete = (id) => {
     // ID item
@@ -45,7 +57,13 @@ function Card({ grocery, groceryRefreshCallback }) {
       <p>
         {Number(grocery.Quantity)} {grocery.Unit}
       </p>
-      <Button variant="outlined" color="primary" size="small" className="btn">
+      <Button 
+        variant="outlined"
+        color="primary"
+        size="small"
+        className="btn"
+        onClick={() => handleClickBuyStatus(grocery.id)}
+      >
         Buy
       </Button>
       <Button
