@@ -45,18 +45,17 @@ function Card(props) {
       </p>
       <Button variant="outlined" color="primary" size="small" className="btn">
         Buy
+      </Button>
       <Button
-      variant="contained"
-      color="primary"
-      size="small"
-      className="btn"
-//       onClick={(event) => {
-//         event.preventDefault();
-      //   handleClickDelete(props.grocery.id);
-//       }}
+        variant="contained"
+        color="primary"
+        size="small"
+        className="btn"
+        // onClick={(event) => {
+        //   event.preventDefault();
+        //   handleClickDelete(props.grocery.id);
+        // }}
       >
-//       </Button>
-//       <Button variant="outlined" color="error" size="small" className="btn">
         Remove
       </Button>
     </div>

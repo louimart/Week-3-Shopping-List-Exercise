@@ -56,7 +56,7 @@ function App() {
           <div className="item-list" key={dataIndex}>
             <Card
               grocery={groceryData}
-              // groceryRefreshCallback={refreshGrocery}
+              groceryRefreshCallback={refreshGrocery}
             />
           </div>
         );

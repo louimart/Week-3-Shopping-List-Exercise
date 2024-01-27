@@ -19,19 +19,19 @@ shoppingRouter.get('/', (req, res) => {
         res.sendStatus(500); // Good server always responds
       });
   });
-  
-// Setup a POST route to add a new creature to the database
+
+// Setup a POST route to add a new grocery item to the database
   shoppingRouter.post('/', (req, res) => {
     const grocery = req.body;
     const sqlText = `INSERT INTO "shopping_list" ("Name", "Quantity", "Unit")
-                       VALUES ($1, $2, $3)`;
+                      VALUES ($1, $2, $3)`;
     // Let sql sanitize your inputs (NO Bobby Drop Tables here!)
     // the $1, $2, etc get substituted with the values from the array below
     pool
       .query(sqlText, [grocery.Name, grocery.Quantity, grocery.Unit])
-      .then((result) => {                                                                 
+      .then((result) => {
         console.log(`Added item to the database`, grocery);
-        res.sendStatus(201);          
+        res.sendStatus(201);
       })
       .catch((error) => {
         console.log(`Error making database query ${sqlText}`, error);
@@ -70,7 +70,7 @@ shoppingRouter.delete('/:id', (req, res) => {
         });
     });
 
-  
+
   module.exports = shoppingRouter;
 
 
